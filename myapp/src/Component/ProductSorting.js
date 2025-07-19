@@ -115,8 +115,6 @@ const ProductSorting = () => {
 
   {products.map((k)=>(
   
- 
-
    <div className="col-lg-3 col-md-4 col-sm-6 pb-1">
      <Link className="text-decoration-none " to={`/products/${k.id}`}>
        <div className="cat-item  d-flex align-items-center mb-4">

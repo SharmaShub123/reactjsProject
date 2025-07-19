@@ -50,7 +50,7 @@ const Login = () => {
   return (
     <>
     <h1 className='text-center'>login page</h1>
-   <div className='row  justify-content-center px-5' >
+   <div className='row  justify-content-center px-5'>
    <form onSubmit={handleSubmit} className='col-lg-3 col-sm-11 bg-primary text-dark p-3 rounded'>
   <div className="form-group">
     <label htmlFor="exampleInputEmail1">Email address</label>

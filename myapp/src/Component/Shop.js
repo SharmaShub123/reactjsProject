@@ -8,9 +8,9 @@ const Shop = () => {
   const [url, seturl] = useState(`https://dummyjson.com/products?limit=12&skip=${skip}`);
 
   useEffect(() => {
-    fetch("http://localhost:9991/crosAllProduct")
+    fetch("https://dummyjson.com/products")
       .then(res => res.json())
-      .then((ry) => { setproducts(ry) 
+      .then((ry) => { setproducts(ry.products) 
         console.log(ry);
         
       });
@@ -210,7 +210,7 @@ const Shop = () => {
                   <div className="col-lg-4 col-md-6 col-sm-6 pb-1">
                     <div className="product-item bg-light mb-4">
                       <div className="product-img position-relative overflow-hidden">
-                        <img className="img-fluid w-100" src={"http://localhost:9991/uploads/"+k.image} style={{height:'300px',objectFit:'scale-down'}} alt />
+                        <img className="img-fluid w-100" src={k.thumbnail} style={{height:'300px',objectFit:'scale-down'}} alt={k.title} />
                         <div className="product-action">
                           <a className="btn btn-outline-dark btn-square" href><i className="fa fa-shopping-cart" /></a>
                           <a className="btn btn-outline-dark btn-square" href><i className="far fa-heart" /></a>
@@ -219,7 +219,7 @@ const Shop = () => {
                         </div>
                       </div>
                       <div className="text-center py-4">
-                        <Link className="h6 text-decoration-none text-truncate" to={`/Detail/${k._id}`}>{k.title}</Link>
+                        <Link className="h6 text-decoration-none text-truncate" to={`/Detail/${k.id}`}>{k.title}</Link>
                         <div className="d-flex align-items-center justify-content-center mt-2">
                           <h5>${k.price}</h5><h6 className="text-muted ml-2"><del>{k.price}</del></h6>
                         </div>
